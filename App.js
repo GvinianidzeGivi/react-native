@@ -11,6 +11,7 @@ import {createStore, applyMiddleware} from 'redux';
 import rootReducer from './redux/reducers';
 import thunk from 'redux-thunk';
 import MainScreen from './components/Main';
+import AddScreen from './components/main/Add';
 
 const store = createStore(rootReducer, applyMiddleware());
 const Stack = createStackNavigator();
@@ -70,6 +71,7 @@ const App = () => {
             component={MainScreen}
             options={{headerShown: false}}
           />
+          <Stack.Screen name="Add" component={AddScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
